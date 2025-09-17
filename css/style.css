@@ -1,0 +1,334 @@
+:root {
+    --cor-menu-principal: #52321A;
+    --cor-menu-secundario: #8b5832;
+    --cor-menu-terceario: #6C401E;
+    --cor-menu-quarteario: #5e3a1eaa;
+    --cor-texto: #DB7A30;
+    --cor-texto-claro: #FFFFFF;
+}
+
+body {
+    background-color: var(--cor-menu-principal);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-texto-claro);
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    color: var(--cor-texto);
+    text-align: center;
+    font-size: 15vmin;
+    font-weight: bold;
+    text-shadow: 1vmin 1vmin 1vmin rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+h2 {
+    color: var(--cor-texto);
+    text-align: center;
+    font-size: 3.5vmin;
+    font-weight: bold;
+    text-shadow: 0.5vmin 0.5vmin 0.5vmin rgba(0, 0, 0, 0.3);
+    margin: 1vmin;
+}
+
+button {
+    background-color: var(--cor-menu-secundario);
+    color: var(--cor-texto-claro);
+    border: 0.5vmin solid var(--cor-menu-terceario);
+    padding: 2vh 4vmin;
+    font-size: 4.5vmin;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-radius: 10px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* --- Controle das Telas --- */
+.tela {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+#tela-inicial {
+    display: flex;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 3vh;
+}
+
+/* --- Estilos da Tela de Jogadores --- */
+.jogador-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vmin;
+    width: 80%;
+    max-width: 700px;
+}
+
+.input-texto {
+    background-color: var(--cor-menu-secundario);
+    border: 0.3vmin solid var(--cor-menu-terceario);
+    border-radius: 5px;
+    color: var(--cor-texto-claro);
+    padding: 1.5vmin;
+    font-size: 3vmin;
+    width: 70%;
+    text-align: center;
+}
+
+.seletor {
+    background-color: var(--cor-menu-secundario);
+    border: 0.3vmin solid var(--cor-menu-terceario);
+    border-radius: 5px;
+    color: var(--cor-texto-claro);
+    padding: 1.5vmin;
+    font-size: 3vmin;
+    width: 30%;
+    cursor: pointer;
+}
+
+/* --- ESTILO DA TELA DE JOGO --- */
+#tela-jogo {
+    align-items: center;
+    justify-content: center;
+}
+
+.tabuleiro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75vmin;
+    height: 100%;
+    gap: 0;
+}
+
+.painel-info-jogador {
+    display: flex;
+    align-items: center;
+    gap: 0.5vmin;
+    width: 71vmin;
+
+}
+
+.pecas-capturadas {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.pecas-capturadas img {
+    width: 2.5vmin;
+    height: 2.5vmin;
+}
+
+.painel-info-jogador h3 {
+    font-size: 2vmin;
+    margin: 0;
+
+}
+
+/* --- Painel Lateral --- */
+
+#painel-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 35vmin;
+}
+
+#fundo-lateral {
+    width: 100%;
+    height: 71vmin;
+    background-color: var(--cor-menu-terceario);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#botoes-lateral {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10vmin;
+    background-color: var(--cor-menu-quarteario);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#botoes-lateral button {
+    font-size: 2vmin;
+    text-align: center;
+    height: 7vmin;
+    padding: 1vmin;
+    margin: 0.5vmin;
+}
+
+#config-lateral {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#config-lateral svg {
+    color: var(--cor-texto);
+    width: 5vmin;
+    height: 5vmin;
+}
+
+#lista-jogadas {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 1vmin;
+    margin: 2vmin;
+}
+
+.jogada {
+    display: flex;
+    flex-direction: row;
+    height: 5vmin;
+}
+
+.jogada h4 {
+    font-size: 2vmin;
+    width: 13vmin
+}
+
+.jogada .enumeracao {
+    width: 5vmin
+}
+
+#tela-jogo canvas {
+    border: 0.5vmin solid var(--cor-menu-terceario);
+    box-shadow: 0.5vmin 0.5vmin 15px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Estilos do Modal --- */
+#modal-fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.janela-modal {
+    display: none;
+    position: relative;
+    background-color: var(--cor-menu-secundario);
+    border: 0.5vmin solid var(--cor-menu-terceario);
+    border-radius: 15px;
+    padding: 3vmin 5vmin;
+    width: 50vw;
+    max-width: 600px;
+    min-width: 300px;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+.janela-modal h1 {
+    font-size: 5vmin;
+    margin: 0;
+    margin-bottom: 1vh;
+}
+
+.janela-modal h2 {
+    font-size: 3vmin;
+    margin: 0;
+    margin-bottom: 0vh;
+}
+
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--cor-texto-claro);
+    font-size: 5vmin;
+}
+
+.fechar:hover {
+    transform: scale(1.2);
+    color: var(--cor-texto)
+}
+
+.config-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 3vmin;
+}
+
+.config-item .seletor {
+    width: 50%;
+}
+
+/* --- Estilos do Toggle Switch --- */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--cor-menu-terceario);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--cor-texto);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
