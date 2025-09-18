@@ -139,7 +139,6 @@ button:hover {
 .painel-info-jogador h3 {
     font-size: 2vmin;
     margin: 0;
-
 }
 
 /* --- Painel Lateral --- */
@@ -200,6 +199,21 @@ button:hover {
     margin: 2vmin;
 }
 
+#lista-jogadas::-webkit-scrollbar {
+  width: 10px;
+}
+
+#lista-jogadas::-webkit-scrollbar-track {
+  background: var(--cor-menu-quarteario);
+  border-radius: 5px;
+}
+
+#lista-jogadas::-webkit-scrollbar-thumb {
+  background-color: var(--cor-texto);
+  border-radius: 5px;
+  border: 2px solid var(--cor-menu-quarteario);
+}
+
 .jogada {
     display: flex;
     flex-direction: row;
@@ -208,7 +222,7 @@ button:hover {
 
 .jogada h4 {
     font-size: 2vmin;
-    width: 13vmin
+    width: 13vmin;
 }
 
 .jogada .enumeracao {
